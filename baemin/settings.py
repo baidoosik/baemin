@@ -55,7 +55,9 @@ ROOT_URLCONF = 'baemin.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templatesg'],
+        'DIRS': [
+            os.path.join(BASE_DIR,'baemin','templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
