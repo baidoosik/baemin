@@ -1,14 +1,5 @@
 {% extends 'layout.html' %}
 {% block title %}
-    <h1>먹방의 민족 - 배달음식 지도</h1>
-    {% if user.is_authenticated %}
-        <p>프로필</p>
-        <p>로그아웃</p>
-    {% else %}
-        <p>로그인</p>
-        <p>회원가입</p>
-    {% endif %}
-
     {% block contents %}
     {% endblock %}
 {% endblock %}
