@@ -125,3 +125,5 @@ STATIC_URL = '/static/'
 
 LOGIN_URL = '/accounts/login/'
 
+UTH_USER_MODEL = 'auth.User'
+
