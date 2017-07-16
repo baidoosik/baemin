@@ -20,9 +20,9 @@ class Item(models.Model):
         return self.name
 
 class Order(models.Model):
-    shop = models.CharField(max_length=100)                 # 가게
+    shop = models.ForeignKey(Shop)                 # 가게
     user = models.ForeignKey(settings.AUTH_USER_MODEL)                 # 주문한 유저
-    item_set = models.ManyToManyField(Shop)             # 주문한 상품 목록 (Hint: ManyToManyField)
+    item_set = models.ManyToManyField(Item)             # 주문한 상품 목록 (Hint: ManyToManyField)
     created_at = models.DateTimeField(auto_now=True)           # 생성일시
 
     def __str__(self):
