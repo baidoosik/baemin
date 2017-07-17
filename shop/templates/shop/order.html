@@ -6,6 +6,12 @@
         <table>
             {{ order_form.as_table }}
         </table>
+        <table>
+            {% for item in item_price %}
+            <li>{{ item.name }} : {{ item.price}}</li>
+            {% endfor %}
+        </table>
+    </form>
         <input type="submit">
     </form>
 {% endblock %}

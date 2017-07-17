@@ -12,6 +12,7 @@ def index_view(request):
 @login_required
 def order_view(request,pk):
     shop = get_object_or_404(Shop, id=pk)
+    item_price = Item.objects.filter(shop=shop).all()
     if request.method =='POST':
         form = OrderModelForm(shop,request.POST)
         if form.is_valid:
@@ -27,5 +28,6 @@ def order_view(request,pk):
     return render(request,'shop/order.html',{
         'order_form':form,
         'shop':shop,
+        'item_price':item_price,
     })
 # Create your views here.
