@@ -21,7 +21,7 @@ def order_view(request,pk):
             order.shop = shop
             order.save()
             form.save_m2m()
-            return redirect('shop:profile')
+            return redirect('accounts:profile')
     else:
         form= OrderModelForm(shop)
 

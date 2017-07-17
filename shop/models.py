@@ -27,4 +27,9 @@ class Order(models.Model):
 
     def __str__(self):
         return self.user
+
+    @property
+    def order_sum(self):
+        result= sum(int(item.price) for item in self.item_set.all())
+        return result
 # Create your models here.
